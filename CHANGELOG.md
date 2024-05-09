@@ -8,6 +8,11 @@
 
 ## [Unreleased]
 
+### Internal Changes 🏗️
+
+- Update dependencies, including to Vite 5
+- Require Node.js 18 or newer
+
 ## [Version 2.2.0] - 2024-01-23
 
 ### Features ✨
