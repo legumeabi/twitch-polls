@@ -151,7 +151,7 @@ This is a step-by-step of our own release process. It's a combination of GitHub 
 
 ### Glitch Part
 
-1. Update the version number in the HTML file in the [twitch polls glitch project](https://glitch.com/edit/#!/twitch-polls) where the file is imported. For example: https://cdn.jsdelivr.net/gh/thelegumeduprix/twitch-polls@2.1.2/release/poll.js
+1. Update the version number in the HTML file in the [twitch polls glitch project](https://glitch.com/edit/#!/twitch-polls) where the file is imported. For example: https://cdn.jsdelivr.net/gh/legumeabi/twitch-polls@2.1.2/release/poll.js
 2. Re-Import the GitHub repository into the [twitch polls detailed glitch project](https://glitch.com/edit/#!/twitch-polls-detailed).
 
 ## Attributions

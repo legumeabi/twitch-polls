@@ -19,14 +19,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/thelegumeduprix/twitch-polls"
+    "url": "https://github.com/legumeabi/twitch-polls"
   },
   "keywords": [
     "twitch",
     "polls",
     "bot"
   ],
-  "author": "@thelegumeduprix",
+  "author": "@legumeabi",
   "license": "MIT",
   "dependencies": {
     "animate.css": "^4.1.1",
