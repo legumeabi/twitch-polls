@@ -1,17 +1,18 @@
+import { defineConfig, globalIgnores } from "eslint/config";
 import js from '@eslint/js';
 import pluginVue from 'eslint-plugin-vue';
 
-export default [
+export default defineConfig([
+  globalIgnores(['*.md', 'build/', 'dist/']),
   {
-    ignores: ['*.md', 'build/**/*'],
-  },
-  ...pluginVue.configs['flat/essential'],
-  js.configs.recommended,
-  {
+    extends: [
+      pluginVue.configs['flat/essential'],
+      js.configs.recommended,
+    ],
     languageOptions: {
       parserOptions: {
         ecmaVersion: 'latest',
       },
     },
   },
-];
+]);
