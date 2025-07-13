@@ -2,14 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link
-      rel="icon"
-      href="/favicon.ico"
-    />
-    <link
-      rel="stylesheet"
-      href="/theme.css"
-    />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0"
@@ -18,9 +10,40 @@
     <script>
       // poll configuratipn
       window.config = {
-        useIcons: true, // true or false, default: true
-      }
+        CHANNEL_NAME: 'legumeabi', // Twitch channel name
+        POSITION_CODE: 'tl', // Position code (e.g., 'tl', 'tr', 'bl', 'br')
+        DEBUG: true, // Enable debug mode
+        USE_ICONS: true, // true or false
+      };
     </script>
+    <style>
+      :root {
+        /* background color for the whole poll box */
+        --poll-background-color: rgba(0, 0, 0, 0.99);
+        /* color for most of the text */
+        --poll-text-color: #fff;
+        /* fill color for ordinary poll options */
+        --option-color: #823597;
+        /* fill color for the winning poll option */
+        --option-color-win: #1ed581;
+        /* fill color for the poll options that are in a tie/draw */
+        --option-color-tie: orange;
+        /* how round are the corners of the whole poll box */
+        --poll-corner-radius: 40px;
+        /* how much space is around the poll options */
+        --poll-padding: 32px;
+        /* text font for most of the text */
+        --body-text-font-family: Futura, system-ui, sans-serif;
+        /* text size for most of the text */
+        --body-text-font-size: 24px;
+        /* text font for the poll title */
+        --poll-title-font-family: Futura, system-ui, sans-serif;
+        /* text size for the poll title */
+        --poll-title-font-size: 32px;
+        /* how round are the corners of each poll option to vote for */
+        --poll-option-corner-radius: 8px;
+      }
+    </style>
   </head>
   <body>
     <div id="app"></div>

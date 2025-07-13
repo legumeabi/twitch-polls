@@ -10,11 +10,9 @@ export const POSITION_MAP = {
 };
 
 export function setup() {
-  const queryParameters = new URLSearchParams(window.location.search);
-
-  const POSITION_CODE = queryParameters.get('position');
-  const DEBUG = queryParameters.has('debug');
-  const CHANNEL_NAME = queryParameters.get('channel');
+  const POSITION_CODE = window.config.POSITION_CODE;
+  const DEBUG = window.config.DEBUG;
+  const CHANNEL_NAME = window.config.CHANNEL_NAME;
 
   if (POSITION_CODE && POSITION_MAP[POSITION_CODE]) {
     store.updatePosition(POSITION_CODE);

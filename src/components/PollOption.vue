@@ -101,7 +101,7 @@ export default {
       }
     },
     useIcons() {
-      return config.useIcons;
+      return config.USE_ICONS;
     },
   },
 };

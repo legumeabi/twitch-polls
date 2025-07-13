@@ -1,6 +1,6 @@
 export default {
   //defaults
-  useIcons: true,
+  USE_ICONS: true,
   // actual values (optionally) set by the user
   ...(window.config ?? {}),
 };
