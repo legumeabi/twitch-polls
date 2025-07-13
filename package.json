@@ -32,24 +32,24 @@
     "animate.css": "^4.1.1",
     "colord": "^2.9.3",
     "tmi.js": "^1.8.5",
-    "vue": "^3.5.13"
+    "vue": "^3.5.17"
   },
   "devDependencies": {
     "@types/tmi.js": "^1.8.6",
-    "@vitejs/plugin-vue": "^4.6.2",
-    "@vue/eslint-config-prettier": "^8.0.0",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/test-utils": "^2.4.6",
     "animate.css": "^4.1.1",
-    "autoprefixer": "^10.4.20",
+    "autoprefixer": "^10.4.21",
     "chai-match": "^1.1.1",
     "colord": "^2.9.3",
-    "eslint": "^9.22.0",
-    "eslint-plugin-vue": "^9.32.0",
-    "jsdom": "^22.1.0",
-    "prettier": "^3.4.2",
+    "eslint": "^9.31.0",
+    "eslint-plugin-vue": "^10.3.0",
+    "jsdom": "^26.1.0",
+    "prettier": "^3.6.2",
     "tmi.js": "^1.8.5",
-    "vite": "^4.5.5",
+    "vite": "^7.0.4",
     "vite-svg-loader": "^5.1.0",
-    "vitest": "^0.34.6"
+    "vitest": "^3.2.4"
   }
 }
