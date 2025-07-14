@@ -4,9 +4,21 @@
 ### Features ✨
 ### Bugfixes 🐛
 ### Internal Changes 🏗️
+### Breaking Changes 🚨
 -->
 
 ## [Unreleased]
+
+### Breaking Changes 🚨
+
+- The poll tool is not usable via glitch.com anymore. Instead the releases here provide a single downloadable HTML file.
+  This file can now be included in OBS as a browser source with the option "Local File".
+- Configuring different settings now is done via editing some variables at the top of this HTML file directly. No need
+  for writing paramters at the end of the URL in the OBS browser source.
+
+### Internal Changes 🏗️
+
+- The build now creates a single output HTML file that bundles all the code together.
 
 ## [Version 2.2.0] - 2024-01-23
 
