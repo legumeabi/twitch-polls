@@ -16,6 +16,11 @@
 - Configuring different settings now is done via editing some variables at the top of this HTML file directly. No need
   for writing paramters at the end of the URL in the OBS browser source.
 
+### Bugfixes 🐛
+
+- The bottom positioning now works again. Both by setting the initial position via the config as well as later chaning
+  it with the positioning command.
+
 ### Internal Changes 🏗️
 
 - The build now creates a single output HTML file that bundles all the code together.
