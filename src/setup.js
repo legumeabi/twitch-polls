@@ -15,7 +15,7 @@ export function setup() {
   const CHANNEL_NAME = window.config.CHANNEL_NAME;
 
   if (POSITION_CODE && POSITION_MAP[POSITION_CODE]) {
-    store.updatePosition(POSITION_CODE);
+    store.setupPosition(POSITION_CODE);
   }
 
   if (DEBUG) {
