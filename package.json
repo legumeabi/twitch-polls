@@ -6,7 +6,7 @@
   "main": "index.html",
   "type": "module",
   "engines": {
-    "node": ">=16"
+    "node": "^20.19.4"
   },
   "scripts": {
     "start": "vite",
