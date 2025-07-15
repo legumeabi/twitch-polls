@@ -9,6 +9,8 @@
 
 ## [Unreleased]
 
+## [Version 3.0.0] - 2025-07-16
+
 ### Breaking Changes 🚨
 
 - The poll tool is not usable via glitch.com anymore. Instead the releases here provide a single downloadable HTML file.
