@@ -22,7 +22,7 @@ jobs:
       - run: npm ci
       - run: npm run build -- --config vite.github-config.js
       - name: Uploading static Vite-generated artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: vite-artifacts
           path: build
@@ -40,7 +40,7 @@ jobs:
       - run: echo "Creating release ${{ github.event.inputs.releaseVersion }}"
       - uses: actions/checkout@v3
       - name: Using Vite-generated artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: vite-artifacts
           path: release
