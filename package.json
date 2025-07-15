@@ -32,6 +32,7 @@
     "animate.css": "^4.1.1",
     "colord": "^2.9.3",
     "tmi.js": "^1.8.5",
+    "vite-plugin-singlefile": "^2.3.0",
     "vue": "^3.5.17"
   },
   "devDependencies": {

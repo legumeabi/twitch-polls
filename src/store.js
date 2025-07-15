@@ -66,6 +66,9 @@ export default reactive({
     const title = options.shift().replaceAll('"', '');
     this.title = title;
   },
+  setupPosition(positionCode) {
+    this.position = positionCode;
+  },
   updatePosition(message) {
     const positionSuffix = message.split('_')[1];
     this.position = positionSuffix;

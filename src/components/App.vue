@@ -65,7 +65,7 @@ export default {
 @layer poll-defaults {
   .container {
     display: flex;
-    height: 100%;
+    height: 100vh;
     padding: 90px;
   }
 
