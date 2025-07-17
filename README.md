@@ -10,9 +10,9 @@ The polling tool consists of a single HTML file that contains all the code and c
 source.
 
 1. Download the latest version under the Release section of this GitHub repository (for example `twitch-polls-3.0.0.html`).
-2. Open the HTML file in your editor of choice and edit at least the channel name field to be your channel of choice.
+2. Open the HTML file in your editor of choice and edit at least the channel name field to be your channel of choice. For example replace `CHANNEL_NAME = 'channel_name'` with `CHANNEL_NAME = 'legumeabi'`
 3. Create new browser source in OBS.
-4. In the browser source properties check `Local file` and then select the downloaded twitch-polls.html file.
+4. In that browser source's properties check `Local file` and then select the downloaded twitch polls HTML file.
 5. Set Width to 1920 and Height to 1080.
 
 ## Options
