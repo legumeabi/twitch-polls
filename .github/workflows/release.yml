@@ -27,13 +27,10 @@ jobs:
           name: twitch-polls
           path: build/index.html
 
-  release-to-branch:
+  create-release:
     runs-on: ubuntu-latest
     needs: build
     permissions:
-      # as per https://github.com/marketplace/actions/git-auto-commit
-      # Give the default GITHUB_TOKEN write permission to commit and push the
-      # added or changed files to the repository.
       contents: write
 
     steps:
@@ -43,15 +40,15 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: twitch-polls
-          path: release
-      - name: Clean release directory
-        run: |
-          mv release/index.html ./twitch-polls.html
-          git rm -rf ./*
-          mv ./twitch-polls.html ./index.html
-      - uses: stefanzweifel/git-auto-commit-action@v5
+          path: ./
+      - name: Rename file for release
+        run: mv index.html twitch-polls-${{ github.event.inputs.releaseVersion }}.html
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
         with:
-          commit_message: Add built file for release ${{ github.event.inputs.releaseVersion }}
-          branch: release/${{ github.event.inputs.releaseVersion }}
-          create_branch: true
-          tagging_message: '${{ github.event.inputs.releaseVersion }}'
+          files: twitch-polls-${{ github.event.inputs.releaseVersion }}.html
+          tag_name: v${{ github.event.inputs.releaseVersion }}
+          name: Release ${{ github.event.inputs.releaseVersion }}
+          draft: false
+          prerelease: false
+          generate_release_notes: true
