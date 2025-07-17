@@ -2,29 +2,54 @@
 
 A Twitch polling tool bot and poll visualization overlay for custom polls.
 
-## How to Use
+## Integration into OBS
 
-If you just want to get started with a easy-to-use version you can use the glitch.com project [twitch-polls](https://twitch-polls.glitch.me). You can integrate the tool into your [streaming software directly](#integration-into-obs) and get automatic updates from time to time.
+This guide describes OBS, but it should work almost identical in other streaming software.
 
-As an alternative you can create an account on [glitch.com](https://glitch.com) and "remix" [the project on Glitch](https://glitch.com/edit/#!/twitch-polls). This allows you to customize the look of the tool with the provided `theme.css` file. You can manually update the version number if you want to get the latest version.
+The polling tool consists of a single HTML file that contains all the code and can be integrated into OBS as a browser
+source.
 
-## Themeability
+1. Download the latest version under the Release section of this GitHub repository (for example `twitch-polls-3.0.0.html`).
+2. Open the HTML file in your editor of choice and edit at least the channel name field to be your channel of choice.
+3. Create new browser source in OBS.
+4. In the browser source properties check `Local file` and then select the downloaded twitch-polls.html file.
+5. Set Width to 1920 and Height to 1080.
 
-You can customize some aspects of the poll design by altering the CSS values in the `theme.css` file.
+## Options
 
-## Configuration
+### Starting Position
 
-You can edit the `useIcons` to be `false` in the `index.html` file if you prefer not have icons shown for winners and tie-break winners:
+If you don't want the poll to be in the default position (top left) you can change the `POSITION_CODE` variable
+at the top of the HTML file.
 
-```
-window.config = {
-  useIcons: true, // true or false, default: true
-}
-```
+These are the supported options:
 
-## Commands
+- `tl`: top left (default)
+- `tr`: top right
+- `br`: bottom right
+- `bl`: bottom left
+
+### Icons
+
+You can edit the `USE_ICONS` to be `false` if you prefer not have icons shown for winners and tie-break winners.
+
+### Themeability
+
+You can customize some aspects of the poll design by altering the CSS values in the in the top `<style>` section of the
+HTML file.
+
+## Usage
 
 The chat commands to start and edit polls are only available to the broadcaster.
+
+### How Votes Work
+
+When a poll is active any number that is put into chat counts as a vote by that user. Following rules apply:
+
+- A number is only counted when it is a valid option number
+- A number is only counted when the message starts with that number (optionally followed by a space and arbitrary other text).
+- A user can change their vote to another number by inputting another valid number
+- With inputting 0 the user can withdraw their vote
 
 ### Starting a Poll
 
@@ -85,74 +110,26 @@ This will leave the currently running poll active and visible while resetting al
 
 This completely ends the poll and throws away the results. You can't recover the results after.
 
-## How Votes Work
-
-When a poll is active any number that is put into chat counts as a vote by that user. Following rules apply:
-
-- A number is only counted when it is a valid option number
-- A number is only counted when the message starts with that number (optionally followed by a space and arbitrary other text).
-- A user can change their vote to another number by inputting another valid number
-- With inputting 0 the user can withdraw their vote
-
-## Integration into OBS
-
-This guide describes OBS, but it should work almost identical in other streaming software.
-
-Take the URL under which the tool is running. In case you remixed on Glitch, the URL should be something similar to `https://rando-url-soup.glitch.me`. Here's how you integrate it into OBS.
-
-Add a browser source and as the URL you input:
-
-```
-https://rando-url-soup.glitch.me?channel=XYZ
-```
-
-Substitute `XYZ` with your channel name.
-
-Make sure you adjust the values for width and height to:
-
-```
-width: 1920
-height: 1080
-```
-
-If you don't want the poll to be in the default position (top left) you can append another parameter to the URL to change this. The following URL puts the overlay into the bottom right:
-
-```
-https://rando-url-soup.glitch.me?channel=XYZ&position=br
-```
-
-Replace the `br` with any corner you like. These are the supported options:
-
-- `tl`: top left (default)
-- `tr`: top right
-- `br`: bottom right
-- `bl`: bottom left
-
 ## Creating a New Release
 
-This is a step-by-step of our own release process. It's a combination of GitHub workflows to create a tagged build artifact on a Git release branch that can then be imported via a CDN service in the Glitch project's basic HTML file.
-
-### GitHub Part
+This is a step-by-step of our own release process.
 
 1. Create and push new commit with the following things:
 
-- Make sure the changelog is up-to-date: Everything that was "unreleased" previously should now live under a new version header under appropriate sub headers (features, bugfixes, internal changes).
+- Make sure the changelog is up-to-date: Everything that was "unreleased" previously should now live under a new version header under appropriate sub headers (features, bug fixes, internal changes).
 - Make sure the same version number is updated in the package.json and also run `npm install` once so that it is reflected into the package-lock.json.
 
 2. Trigger the GitHub workflow "Release a new version":
 
 - Pick the `main` branch with the latest commit
 - Enter the previously chosen version number and hit "Run workflow"
+- This creates a draft release with that version number
 
-3. Build a GitHub Release
+3. Edit and Publish Draft Release
 
-- Base it on the new version tag (that was created by the workflow)
-- Copy the latest changelog entries into the release notes as-is (check previous releases if unsure)
-
-### Glitch Part
-
-1. Update the version number in the HTML file in the [twitch polls glitch project](https://glitch.com/edit/#!/twitch-polls) where the file is imported. For example: https://cdn.jsdelivr.net/gh/legumeabi/twitch-polls@2.1.2/release/poll.js
-2. Re-Import the GitHub repository into the [twitch polls detailed glitch project](https://glitch.com/edit/#!/twitch-polls-detailed).
+- Paste the changelog for the specific version into the draft release
+- Verify that the HTML file is downloadable in the assets section
+- Publish the release
 
 ## Attributions
 
