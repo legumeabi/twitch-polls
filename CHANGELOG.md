@@ -2,7 +2,7 @@
 
 <!--
 ### Features ✨
-### Bugfixes 🐛
+### Bug Fixes 🐛
 ### Internal Changes 🏗️
 ### Breaking Changes 🚨
 -->
